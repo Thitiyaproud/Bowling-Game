@@ -30,6 +30,15 @@ class BowlingFrame:
             total = total + self.pins[index]
         return total
 
+    def is_spare(self):
+        """Check if the current frame is a spare."""
+        return self.score() == 10 and self.pins[0] != 10
+
+    def is_strike(self):
+        """Check if the current frame is a strike."""
+        return self.pins[0] == 10
+
+
 
 # -----------------------------------------------------------------------------
 class BowlingFrame10(BowlingFrame):
